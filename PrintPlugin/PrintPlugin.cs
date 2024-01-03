@@ -12,7 +12,7 @@ namespace PrintPlugin
         {
             Spire.Pdf.PdfDocument pdfDocument = new Spire.Pdf.PdfDocument(inPars?.ToString());
             pdfDocument.Print();
-            return "打印完成";
+            return "列印完畢";
         }
     }
 }
