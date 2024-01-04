@@ -26,9 +26,9 @@ namespace PluginsApp
         private void frmMain_Load(object sender, EventArgs e)
         {
             List<PluginInfo> plugins = new List<PluginInfo>();
-            plugins.Add(new PluginInfo() { Name = "HelloPlugin", Path = @"HelloPlugin\bin\Debug\net5.0\HelloPlugin.dll", inPars = "Pluins" });
-            plugins.Add(new PluginInfo() { Name = "JsonPlugin", Path = @"JsonPlugin\bin\Debug\net5.0\JsonPlugin.dll", inPars = null });
-            plugins.Add(new PluginInfo() { Name = "PrintPlugin", Path = @"PrintPlugin\bin\Debug\net5.0\PrintPlugin.dll", inPars = @"1.pdf" });
+            plugins.Add(new PluginInfo() { Name = "HelloPlugin", Path = @"HelloPlugin\bin\Debug\net8.0-windows\HelloPlugin.dll", inPars = "Pluins" });
+            plugins.Add(new PluginInfo() { Name = "JsonPlugin", Path = @"JsonPlugin\bin\Debug\net8.0-windows\JsonPlugin.dll", inPars = null });
+            plugins.Add(new PluginInfo() { Name = "PrintPlugin", Path = @"PrintPlugin\bin\Debug\net8.0-windows\PrintPlugin.dll", inPars = @"1.pdf" });
 
             lstboxPlugins.DataSource = plugins;
             lstboxPlugins.DisplayMember = "Name";
@@ -57,7 +57,7 @@ namespace PluginsApp
             }
             else
             {
-                MessageBox.Show("插件已卸载");
+                MessageBox.Show("外掛已卸除");
             }
         }
 
@@ -92,14 +92,14 @@ namespace PluginsApp
                     GC.WaitForPendingFinalizers();
                 }
             }
-            txtOut.AppendText($"{DateTime.Now} 执行完成-{result} \r\n");
+            txtOut.AppendText($"{DateTime.Now} 執行完畢-{result} \r\n");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             StringBuilder stringBuilder = new StringBuilder();
             var arr = AppDomain.CurrentDomain.GetAssemblies();
-            stringBuilder.AppendLine($"{DateTime.Now} 当前程序集列表：{arr.Length}个");
+            stringBuilder.AppendLine($"{DateTime.Now} 目前組件共計：{arr.Length}個");
             if (ckbName.Checked)
                 foreach (var item in arr)
                 {
